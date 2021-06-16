@@ -86,10 +86,13 @@ def get_uptime():
         hrs = int(hrs)
         min = int(min)
         string = ''
-        if hrs != 0:
+        if hrs != 0 and min != 0:
             string += str(hrs) + ' hours and '
-        if min != 0 or hrs == 0:
             string += str(min) + ' minutes'
+        elif min != 0 or hrs == 0:
+            string += str(min) + ' minutes'
+        elif hrs!=0 and min == 0:
+            string += str(hrs) + ' hours'
         return string
 
 uptime = get_uptime()
